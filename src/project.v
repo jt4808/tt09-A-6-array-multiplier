@@ -5,7 +5,7 @@
 
 `default_nettype none
 
-module tt_um_A_0_array_multiplier (
+module tt_um_A_6_array_multiplier (
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -17,8 +17,9 @@ module tt_um_A_0_array_multiplier (
 );
 
   // All output pins must be assigned. If not used, assign to 0.
+
     wire[3:0] m = ui_in [7:4];
-    wire[3:0] m = ui_in [3:0];
+    wire[3:0] q = ui_in [3:0];
     wire[7:0] p;
 
     wire [3:0] mult0, mult1, mult2, mult3;   // indiv. layers of multiplication by hand

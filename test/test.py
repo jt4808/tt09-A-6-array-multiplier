@@ -38,9 +38,9 @@ async def test_project(dut):
     # The following assersion is just an example of how to check the output values.
     # Change it to match the actual expected output of your module:
     assert dut.uo_out.value == 0x08
-    assert dut.uo_out.value == 0x18
-    assert dut.uo_out.value == 0x25
-    assert dut.uo_out.value == 0x81
+    assert dut.uo_out.value == 0x12
+    assert dut.uo_out.value == 0x19
+    assert dut.uo_out.value == 0x51
     assert dut.uo_out.value == 0x01
 
     dut.ui_in.value = 0x42
@@ -49,15 +49,15 @@ async def test_project(dut):
 
     dut.ui_in.value = 0x36
     await ClockCycles(dut.clk, 1)
-    assert dut.uo_out.value == 0x18
+    assert dut.uo_out.value == 0x12
 
     dut.ui_in.value = 0x55
     await ClockCycles(dut.clk, 1)
-    assert dut.uo_out.value == 0x25
+    assert dut.uo_out.value == 0x19
 
     dut.ui_in.value = 0x99
     await ClockCycles(dut.clk, 1)
-    assert dut.uo_out.value == 0x81
+    assert dut.uo_out.value == 0x51
 
     dut.ui_in.value = 0x11
     await ClockCycles(dut.clk, 1)
