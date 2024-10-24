@@ -7,22 +7,35 @@ You can also include images in this folder and reference them in the markdown. E
 512 kb in size, and the combined size of all images must be less than 1 MB.
 -->
 
+![alt text](https://github.com/jt4808/tt09-A-6-array-multiplier/blob/main/2204LAB4MULTIPLIER.pdf?raw=true)
+
 How it works
 
-The provided Verilog code implements a 4x4 array multiplier that multiplies two 4-bit numbers, 
-m and q, to produce an 8-bit output. The design begins by extracting the multiplicands from an 
-8-bit input, where the upper 4 bits represent m and the lower 4 bits represent q. To compute the 
-product, the module calculates partial products using bitwise AND operations for each bit in q. 
-These partial products are organized into four arrays, each corresponding to one bit of q. 
-The next step involves summing these partial products using a series of full adders. 
-Each adder takes the results from the previous stage along with the next bits of the partial products, 
-propagating any carries as necessary. The cumulative result of these additions is stored in an 8-bit 
-variable p, which is then assigned to the output. The full adder module, utilized in this process, 
-implements the basic logic for calculating the sum and carry-out from two inputs and a carry-in. 
-This approach—calculating partial products and combining them through structured addition—allows for 
-efficient bit-level calculations to achieve the final product.
+The Verilog code is for a 4x4 array multiplier that takes two 4-bit numbers, m and q, 
+and produces an 8-bit result. It starts by splitting an 8-bit input into two parts: the upper 4 
+bits represent m and the lower 4 bits represent q. To calculate the product, the code computes 
+partial products using bitwise AND operations. Each partial product corresponds to a bit of q, 
+and there are four arrays created for these. After that, the code sums these partial products 
+with a series of full adders. Each full adder takes inputs from the previous stage and the next 
+bits of the partial products, managing carries as needed. The final sum is stored in an 8-bit 
+variable p, which is then sent to the output. The full adder used in this process helps calculate 
+the sum and carry-out from two inputs and a carry-in. This method of breaking down the multiplication 
+into partial products and adding them up demonstrates a clear and structured approach to 
+implementing a basic multiplier in hardware.
 
 How to test it
+
+To test the Verilog program for the 4x4 array multiplier, the user would create a testbench, 
+which is a separate module designed to evaluate how the multiplier functions. They would begin by 
+setting up a variety of 4-bit input values, including simple cases such as all zeros and all ones, 
+as well as some random combinations. This approach helps ensure that the multiplier can handle 
+different scenarios correctly. Next, the user would run the testbench with these inputs and 
+check the outputs against the expected results of the multiplication. Since the multiplication 
+of two 4-bit numbers can yield an 8-bit result, they would calculate the expected outputs manually 
+or use a calculator for verification. To facilitate this process, the user would add print 
+statements to display the outputs on the console. If any outputs do not match the expected values, 
+they would review the code to identify and correct any mistakes. By systematically testing various 
+inputs and confirming the results, the user can ensure that the multiplier operates as intended.
 
 ## External hardware
 N/A
